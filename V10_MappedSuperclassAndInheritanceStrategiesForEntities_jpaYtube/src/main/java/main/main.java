@@ -2,6 +2,10 @@ package main;
 
 
 import entity.*;
+import entity.superClass.Bicycle;
+import entity.superClass.Car;
+import entity.tablePerClass.Employee;
+import entity.tablePerClass.Manager;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -19,16 +23,14 @@ public class main {
             // get transaction
             em.getTransaction().begin();
             System.out.println("Start...");
-
-            Product product = new Product();
-            product.setName("Prod_1");
-
-            Chocolate chocolate = new Chocolate();
-            chocolate.setName("chocolate");
-            chocolate.setkCal(1500);
-            em.persist(product);
-            em.persist(chocolate);
-
+            Car c = new Car();
+            c.setColor("Black");
+            c.setGas("Gas");
+            Bicycle b = new Bicycle();
+            b.setColor("Blue");
+            b.setModel("BMW");
+            em.persist(c);
+            em.persist(b);
             System.out.println("End!!!");
             em.getTransaction().commit();
             em.close();
