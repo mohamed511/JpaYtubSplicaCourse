@@ -1,15 +1,11 @@
 package main;
 
+import entity.Employee;
 import entity.Product;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
+import javax.persistence.*;
+import java.util.List;
 
-/*
-- persist() - flush() - find() - getReference()
-- contains() - detach() - clear() - remove() - merge() - refresh()
- */
 public class main {
     public static void main(String[] args) {
         // define Entity Manager
@@ -21,18 +17,19 @@ public class main {
         try {
             // get transaction
             em.getTransaction().begin();
-            System.out.println("Start...");
+            System.out.println("============> Start...");
+            String jpql = "SELECT e FROM Employee e, Department d WHERE e.department = d AND d.id = :id";
+            TypedQuery<Employee> list = em.createQuery(jpql,Employee.class);
+            list.setParameter("id",1);
 
-            Product p = new Product();
-            p.setId(7L);
-            p.setName("Test");
-            em.persist(p); // add to the context
-            em.clear(); // take all instance out from the context
-            //em.detach(p); // take p out from the context
-            System.out.println("End!!!");
+            List<Employee> employees = list.getResultList();
+            employees.forEach(System.out::println);
+
+            System.out.println("===============> End!!!");
             em.getTransaction().commit();// insert to the database
             em.close();
         } catch (Exception e) {
+            e.printStackTrace();
             em.getTransaction().rollback();
             em.close();
         }
