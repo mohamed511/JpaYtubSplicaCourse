@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="EntityContext_V1_jpaYtube" />
+        <module name="V6_OneToManyAndManyToOne_jpaYtube" />
+        <module name="V7_ManyToMany_jpaYtube" />
+        <module name="V9_MapsForRelationships_jpaYtube" />
+        <module name="V10_MappedSuperclassAndInheritanceStrategiesForEntities_jpaYtube" />
+        <module name="IdAndGeneratingIdValues_V2_jpaYtube" />
+        <module name="V14_ EntityLifecycleEventsAndCaching_jpaYtube" />
+        <module name="V5_OneToOneandSecondaryTables_jpaYtube" />
+        <module name="V12_ JPQLAndUsingQueries_jpaYtube" />
+        <module name="V4_AttributeOverrideAndComposedPK_jpaYtube" />
+        <module name="V3_EnumeratedAndTemporalTypes_jpaYtube" />
+        <module name="V13_ JPAInALayeredArchitecture_jpaYtube" />
+        <module name="V11_TheEntityManager_jpaYtube" />
+        <module name="V2_IdAndGeneratingIdValues_jpaYtube" />
+        <module name="V15_JPQLVsCriteriaQuery_jpaYtube" />
+        <module name="V8_AssoAndElement_jpaYtube" />
+      </profile>
+    </annotationProcessing>
+  </component>
+</project>
